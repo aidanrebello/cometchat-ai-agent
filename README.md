@@ -354,9 +354,69 @@ If this information is not available in the knowledge base, the system does not 
 
 
 
+\# CometChat AI Customer Support Agent
 
 
-Architecture
+
+An AI-powered customer support agent built for the CometChat internship assignment.
+
+
+
+The system combines \*\*RAG (Retrieval-Augmented Generation)\*\*, \*\*local LLM inference using Ollama\*\*, deterministic policy routing, order lookup, conversation memory, and safety controls to provide accurate customer-facing support responses.
+
+
+
+\---
+
+
+
+\## 🚀 Features
+
+
+
+\- RAG-based customer support
+
+\- Local LLM using Ollama
+
+\- Sentence Transformers for local embeddings
+
+\- Policy-aware routing
+
+\- Returns policy handling
+
+\- TrailPlus membership handling
+
+\- Warranty handling
+
+\- Damaged / wrong item handling
+
+\- Final-sale item handling
+
+\- Shipping questions
+
+\- Breeze Tumbler product information
+
+\- Order status lookup
+
+\- Conversation history
+
+\- Internal information protection
+
+\- Prompt-injection protection
+
+\- Deterministic handling for critical policy rules
+
+\- FastAPI REST API
+
+\- Swagger UI
+
+\- Automated tests
+
+
+
+
+
+**Architecture:**
 
 &#x20;                   +----------------------+
 
@@ -370,9 +430,9 @@ Architecture
 
 &#x20;                   +----------------------+
 
-&#x20;                   |      FastAPI API      |
+&#x20;                   |      FastAPI API     |
 
-&#x20;                   |        /chat          |
+&#x20;                   |        /chat         |
 
 &#x20;                   +----------+-----------+
 
@@ -422,13 +482,13 @@ Architecture
 
 &#x20;                                            v
 
-&#x20;                                 +---------------------+
+&#x20;                                 +----------------------+
 
 &#x20;                                 | Sentence Transformers|
 
-&#x20;                                 |  Local Embeddings   |
+&#x20;                                 |  Local Embeddings    |
 
-&#x20;                                 +----------+----------+
+&#x20;                                 +----------+-----------+
 
 &#x20;                                            |
 
@@ -450,7 +510,7 @@ Architecture
 
 &#x20;                                 | Customer-Safe       |
 
-&#x20;                                 | Response             |
+&#x20;                                 | Response            |
 
 &#x20;                                 +---------------------+
 
