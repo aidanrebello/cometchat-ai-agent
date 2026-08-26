@@ -60,7 +60,7 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 
 
-**```**
+**```text**
 
 &#x20;                        **┌──────────────────────┐**
 
