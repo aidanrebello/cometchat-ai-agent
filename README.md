@@ -822,3 +822,71 @@ This project was developed as part of the CometChat AI Agent internship assignme
 
 The implementation focuses on building a customer-support AI agent using RAG, local LLM inference, policy-aware routing, deterministic order lookup, conversation memory, and safety controls.
 
+
+
+---
+
+## Frontend
+
+The project now includes a vanilla HTML / CSS / JavaScript frontend that connects directly to the FastAPI backend. No JavaScript framework is required.
+
+**Stack:** HTML5 · CSS3 · Vanilla JavaScript
+
+**Frontend structure:**
+
+```
+frontend/
+├── index.html   — Chat UI (semantic HTML5, accessibility attributes)
+├── style.css    — Styles (black/white/gray palette, responsive)
+└── script.js    — Logic (session management, /chat integration, error handling)
+```
+
+### Running the Application
+
+**1. Start the backend:**
+
+```bash
+uvicorn app.main:app --reload
+```
+
+**2. Start the frontend dev server:**
+
+```bash
+python -m http.server 5500 --directory frontend
+```
+
+**3. Open in your browser:**
+
+```
+http://127.0.0.1:5500
+```
+
+### Frontend Features
+
+- Professional Aster & Row branded chat interface
+- User messages right-aligned, assistant messages left-aligned
+- Typing indicator while waiting for the backend
+- Collapsible Sources section per AI response
+- Quick-action suggestion chips on the welcome screen
+- New Conversation button (generates a fresh session ID)
+- Enter to send · Shift+Enter for a new line
+- Graceful error handling with customer-friendly messages
+- Fully responsive (desktop, tablet, mobile)
+- Accessible: semantic HTML, ARIA labels, keyboard navigation, focus states
+- Session ID stored in `sessionStorage` — conversation memory handled by the backend
+
+### Full System Architecture
+
+```mermaid
+flowchart TD
+    A[Customer Browser\nHTML / CSS / JS] -->|POST /chat| B[FastAPI\napp/main.py]
+    B --> C[agent.py\nPolicy + Safety Routing]
+    C --> D[Order Lookup\norders.json]
+    C --> E[RAG\nrag.py]
+    E --> F[Knowledge Base\nMarkdown Policies]
+    F --> G[Sentence Transformers\nLocal Embeddings]
+    G --> H[Ollama\nllama3.2:3b]
+    H -->|Customer-safe response| B
+    B -->|JSON response| A
+```
+

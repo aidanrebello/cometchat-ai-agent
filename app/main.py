@@ -1,4 +1,5 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
 
@@ -9,6 +10,21 @@ app = FastAPI(
     title="CometChat AI Agent",
     description="RAG-based customer support AI agent",
     version="1.0.0"
+)
+
+
+# ============================================================
+# CORS — allow local frontend development server
+# ============================================================
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[
+        "http://127.0.0.1:5500",
+        "http://localhost:5500",
+    ],
+    allow_methods=["GET", "POST"],
+    allow_headers=["Content-Type", "Cache-Control", "Pragma"],
 )
 
 

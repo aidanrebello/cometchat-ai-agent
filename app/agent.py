@@ -1157,10 +1157,6 @@ def generate_answer(
             "sources": []
         }
 
-    # ========================================================
-    # ORDER ID DETECTION
-    # ========================================================
-
     current_order_id = extract_order_id(
         question
     )
@@ -1169,9 +1165,20 @@ def generate_answer(
         combined_question
     )
 
+    # order_question must be defined BEFORE active_order_id because
+    # the expression below conditions on it.
+    order_question = is_order_lookup_question(
+        question
+    )
+
     active_order_id = (
         current_order_id
-        or historical_order_id
+        # Only fall back to a historical order ID when the current
+        # question is itself an order-status/tracking question.
+        # Without this guard an order ID from a previous turn bleeds
+        # into unrelated questions (e.g. "What does the warranty cover?")
+        # and causes the order-lookup hard route to fire incorrectly.
+        or (historical_order_id if order_question else None)
     )
 
     if active_order_id:
@@ -1179,10 +1186,6 @@ def generate_answer(
         active_order_id = normalize_order_id(
             active_order_id
         )
-
-    order_question = is_order_lookup_question(
-        question
-    )
 
     # ========================================================
     # HARD ROUTE: ORDER LOOKUP
@@ -1309,34 +1312,40 @@ def generate_answer(
     # POLICY SIGNALS
     # ========================================================
 
-    combined_lower = combined_question.lower()
+    # ── Policy-signal detection uses ONLY the current question ──────────────
+    # combined_lower includes all previous user messages.  Using it here
+    # causes keywords from prior turns (e.g. "warranty", "damaged") to bleed
+    # into the current question's routing decision, producing the wrong answer.
+    # Hard-route decisions must be based on what the user is asking RIGHT NOW.
+    question_lower = question.lower()
+    combined_lower = combined_question.lower()  # kept for RAG query + gate only
 
     warranty_query = is_warranty_query(
-        combined_lower
+        question_lower
     )
 
     damaged_or_wrong_query = is_damaged_or_wrong_query(
-        combined_lower
+        question_lower
     )
 
     final_sale_query = is_final_sale_query(
-        combined_lower
+        question_lower
     )
 
     trailplus_query = is_trailplus_query(
-        combined_lower
+        question_lower
     )
 
     standard_return_query = is_standard_return_question(
-        combined_lower
+        question_lower
     )
 
     indoor_fit_query = is_indoor_fit_question(
-        combined_lower
+        question_lower
     )
 
     days_since_delivery = extract_days_from_question(
-        combined_lower
+        question_lower
     )
 
     # ========================================================

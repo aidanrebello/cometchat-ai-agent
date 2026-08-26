@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aster &amp; Row AI Customer Support" />
+  <title>Aster &amp; Row · AI Support</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ======================================================
+       HEADER
+  ====================================================== -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-name">Aster &amp; Row</span>
+        <span class="brand-sub">AI Customer Support</span>
+      </div>
+      <div class="header-actions">
+        <span class="ai-badge" aria-label="AI-powered support">AI Support</span>
+        <button
+          id="btn-new-chat"
+          class="btn-new"
+          type="button"
+          aria-label="Start a new conversation"
+          title="New conversation"
+        >
+          New Conversation
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================================================
+       MAIN CHAT AREA
+  ====================================================== -->
+  <main class="chat-main" role="main">
+    <div class="chat-container" aria-live="polite" aria-relevant="additions">
+
+      <!-- Welcome / empty-state -->
+      <section class="welcome" id="welcome-section" aria-label="Welcome message">
+        <div class="welcome-icon" aria-hidden="true">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none"
+               stroke="currentColor" stroke-width="1.5"
+               stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+          </svg>
+        </div>
+        <h1 class="welcome-title">AI Support Assistant</h1>
+        <p class="welcome-sub">How can we help you today?</p>
+
+        <!-- Quick-action suggestion chips -->
+        <div class="suggestions" role="list" aria-label="Suggested questions">
+          <button class="chip" type="button" role="listitem"
+                  data-message="Can I return my item?">
+            "Can I return my item?"
+          </button>
+          <button class="chip" type="button" role="listitem"
+                  data-message="Where is my order?">
+            "Where is my order?"
+          </button>
+          <button class="chip" type="button" role="listitem"
+                  data-message="Do you ship internationally?">
+            "Do you ship internationally?"
+          </button>
+          <button class="chip" type="button" role="listitem"
+                  data-message="My item arrived damaged.">
+            "My item arrived damaged."
+          </button>
+          <button class="chip" type="button" role="listitem"
+                  data-message="What does the warranty cover?">
+            "What does the warranty cover?"
+          </button>
+        </div>
+      </section>
+
+      <!-- Messages list -->
+      <ul class="messages" id="messages" aria-label="Chat messages" role="log">
+        <!-- Messages injected by script.js -->
+      </ul>
+
+    </div>
+  </main>
+
+  <!-- ======================================================
+       INPUT BAR
+  ====================================================== -->
+  <footer class="input-bar" role="contentinfo">
+    <div class="input-inner">
+      <label for="chat-input" class="sr-only">Type your message</label>
+      <textarea
+        id="chat-input"
+        class="chat-input"
+        rows="1"
+        placeholder="Type your message…"
+        aria-label="Type your message"
+        autocomplete="off"
+        spellcheck="true"
+      ></textarea>
+      <button
+        id="btn-send"
+        class="btn-send"
+        type="button"
+        aria-label="Send message"
+        title="Send (Enter)"
+      >
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+             stroke="currentColor" stroke-width="2"
+             stroke-linecap="round" stroke-linejoin="round"
+             aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13"/>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+        <span class="btn-send-label">Send</span>
+      </button>
+    </div>
+    <p class="input-hint">
+      Press <kbd>Enter</kbd> to send &middot; <kbd>Shift+Enter</kbd> for new line
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
