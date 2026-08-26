@@ -12,43 +12,45 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 
 
-\- RAG-based customer support
+\- RAG-based customer support.
 
-\- Local LLM using Ollama
+\- Local LLM using Ollama.
 
-\- Sentence Transformers for local embeddings
+\- Sentence Transformers for local embeddings.
 
-\- Policy-aware routing
+\- Policy-aware routing.
 
-\- Returns policy handling
+\- Returns policy handling.
 
-\- TrailPlus membership handling
+\- TrailPlus membership handling.
 
-\- Warranty handling
+\- Warranty handling.
 
-\- Damaged / wrong item handling
+\- Damaged / wrong item handling.
 
-\- Final-sale item handling
+\- Final-sale item handling.
 
-\- Shipping questions
+\- Shipping questions.
 
-\- Breeze Tumbler product information
+\- Breeze Tumbler product information.
 
-\- Order status lookup
+\- Order status lookup.
 
-\- Conversation history
+\- Conversation history.
 
-\- Internal information protection
+\- Internal information protection.
 
-\- Prompt-injection protection
+\- Prompt-injection protection.
 
-\- Deterministic handling for critical policy rules
+\- Deterministic handling for critical policy rules.
 
-\- FastAPI REST API
+\- FastAPI REST API.
 
-\- Swagger UI
+\- Swagger UI.
 
-\- Automated tests
+\- Automated tests.
+
+
 
 
 
@@ -68,9 +70,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                        **└──────────┬───────────┘**
 
-&#x20;                                   **│**
+&#x20;                                      **│**
 
-&#x20;                                   **▼**
+&#x20;                                      **▼**
 
 &#x20;                        **┌──────────────────────┐**
 
@@ -80,9 +82,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                        **└──────────┬───────────┘**
 
-&#x20;                                   **│**
+&#x20;                                      **│**
 
-&#x20;                                   **▼**
+&#x20;                                      **▼**
 
 &#x20;                        **┌──────────────────────┐**
 
@@ -94,13 +96,13 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                        **└──────────┬───────────┘**
 
-&#x20;                                   **│**
+&#x20;                                       **│**
 
 &#x20;                      **┌────────────┴────────────┐**
 
-&#x20;                      **│                         │**
+&#x20;                      **│                                 │**
 
-&#x20;                      **▼                         ▼**
+&#x20;                      **▼                                ▼**
 
 &#x20;             **┌─────────────────┐      ┌─────────────────┐**
 
@@ -110,9 +112,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;             **└─────────────────┘      └────────┬────────┘**
 
-&#x20;                                               **│**
+&#x20;                                                       **│**
 
-&#x20;                                               **▼**
+&#x20;                                                       **▼**
 
 &#x20;                                     **┌─────────────────────┐**
 
@@ -122,9 +124,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                                     **└──────────┬──────────┘**
 
-&#x20;                                                **│**
+&#x20;                                                   **│**
 
-&#x20;                                                **▼**
+&#x20;                                                   **▼**
 
 &#x20;                                     **┌─────────────────────┐**
 
@@ -136,9 +138,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                                     **└──────────┬──────────┘**
 
-&#x20;                                                **│**
+&#x20;                                                   **│**
 
-&#x20;                                                **▼**
+&#x20;                                                   **▼**
 
 &#x20;                                     **┌─────────────────────┐**
 
@@ -148,9 +150,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                                     **└──────────┬──────────┘**
 
-&#x20;                                                **│**
+&#x20;                                                   **│**
 
-&#x20;                                                **▼**
+&#x20;                                                   **▼**
 
 &#x20;                                     **┌─────────────────────┐**
 
