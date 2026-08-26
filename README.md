@@ -420,8 +420,6 @@ The system combines \*\*RAG (Retrieval-Augmented Generation)\*\*, \*\*local LLM 
 
 
 
-**```text**
-
 &#x20;                        **┌──────────────────────┐**
 
 &#x20;                        **│      Customer        │**
