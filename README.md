@@ -70,9 +70,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                        **└──────────┬───────────┘**
 
-&#x20;                                      **│**
+&#x20;                                   **│**
 
-&#x20;                                      **▼**
+&#x20;                                   **▼**
 
 &#x20;                        **┌──────────────────────┐**
 
@@ -82,9 +82,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                        **└──────────┬───────────┘**
 
-&#x20;                                      **│**
+&#x20;                                   **│**
 
-&#x20;                                      **▼**
+&#x20;                                   **▼**
 
 &#x20;                        **┌──────────────────────┐**
 
@@ -96,13 +96,13 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                        **└──────────┬───────────┘**
 
-&#x20;                                       **│**
+&#x20;                                   **│**
 
 &#x20;                      **┌────────────┴────────────┐**
 
-&#x20;                      **│                                 │**
+&#x20;                      **│                         │**
 
-&#x20;                      **▼                                ▼**
+&#x20;                      **▼                         ▼**
 
 &#x20;             **┌─────────────────┐      ┌─────────────────┐**
 
@@ -112,9 +112,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;             **└─────────────────┘      └────────┬────────┘**
 
-&#x20;                                                       **│**
+&#x20;                                               **│**
 
-&#x20;                                                       **▼**
+&#x20;                                               **▼**
 
 &#x20;                                     **┌─────────────────────┐**
 
@@ -124,9 +124,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                                     **└──────────┬──────────┘**
 
-&#x20;                                                   **│**
+&#x20;                                                **│**
 
-&#x20;                                                   **▼**
+&#x20;                                                **▼**
 
 &#x20;                                     **┌─────────────────────┐**
 
@@ -138,9 +138,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                                     **└──────────┬──────────┘**
 
-&#x20;                                                   **│**
+&#x20;                                                **│**
 
-&#x20;                                                   **▼**
+&#x20;                                                **▼**
 
 &#x20;                                     **┌─────────────────────┐**
 
@@ -150,9 +150,9 @@ The system combines Retrieval-Augmented Generation (RAG), local LLM inference, p
 
 &#x20;                                     **└──────────┬──────────┘**
 
-&#x20;                                                   **│**
+&#x20;                                                **│**
 
-&#x20;                                                   **▼**
+&#x20;                                                **▼**
 
 &#x20;                                     **┌─────────────────────┐**
 
