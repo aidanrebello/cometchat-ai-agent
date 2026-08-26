@@ -40,6 +40,81 @@ Critical information such as order status is retrieved deterministically from lo
 * Breeze Tumbler product information
 * Support escalation information
 
+## Architecture
+
+The system follows a layered architecture that separates the customer interface, API layer, agent routing, knowledge retrieval, and local LLM inference.
+
+                    ┌─────────────────────────┐
+                    │       Customer          │
+                    │    Chat Interface       │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │       Frontend          │
+                    │ index.html / script.js  │
+                    │        style.css        │
+                    └────────────┬────────────┘
+                                 │
+                                 │ POST /chat
+                                 ▼
+                    ┌─────────────────────────┐
+                    │        FastAPI          │
+                    │        /chat            │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │        AI Agent         │
+                    │        agent.py         │
+                    │                         │
+                    │ • Intent Detection      │
+                    │ • Policy Routing        │
+                    │ • Conversation Memory   │
+                    │ • Safety Controls       │
+                    └────────────┬────────────┘
+                                 │
+                    ┌────────────┴────────────┐
+                    │                         │
+                    ▼                         ▼
+          ┌──────────────────┐      ┌──────────────────┐
+          │ Deterministic    │      │       RAG        │
+          │ Order Lookup     │      │     rag.py       │
+          └────────┬─────────┘      └────────┬─────────┘
+                   │                         │
+                   ▼                         ▼
+          ┌──────────────────┐      ┌──────────────────┐
+          │   orders.json    │      │  Knowledge Base  │
+          │                  │      │ Markdown Policies│
+          └────────┬─────────┘      └────────┬─────────┘
+                   │                         │
+                   │                         ▼
+                   │                ┌──────────────────┐
+                   │                │ Sentence         │
+                   │                │ Transformers     │
+                   │                │ all-MiniLM-      │
+                   │                │ L6-v2            │
+                   │                └────────┬─────────┘
+                   │                         │
+                   └────────────┬────────────┘
+                                │
+                                ▼
+                    ┌─────────────────────────┐
+                    │         Ollama          │
+                    │      Llama 3.2 3B       │
+                    │     Local LLM Inference │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │   Customer-Safe Answer  │
+                    └────────────┬────────────┘
+                                 │
+                                 ▼
+                    ┌─────────────────────────┐
+                    │       Customer          │
+                    └─────────────────────────┘
+
 ## Order Management
 
 * Deterministic order lookup
